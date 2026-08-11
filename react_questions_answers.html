@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 React.js Interview Questions & Answers</title>
+    <style>
+        :root {
+            --bg-color: #0a0f1d;
+            --card-bg: #131b2e;
+            --card-hover: #1a243d;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --react-blue: #61dafb;
+            --beginner-color: #10b981;
+            --intermediate-color: #0284c7;
+            --advanced-color: #a855f7;
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .react-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #61dafb 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-beginner {
+            background-color: rgba(16, 185, 129, 0.12);
+            color: var(--beginner-color);
+            border: 1px solid var(--beginner-color);
+        }
+
+        .badge-intermediate {
+            background-color: rgba(2, 132, 199, 0.12);
+            color: var(--intermediate-color);
+            border: 1px solid var(--intermediate-color);
+        }
+
+        .badge-advanced {
+            background-color: rgba(168, 85, 247, 0.12);
+            color: var(--advanced-color);
+            border: 1px solid var(--advanced-color);
+        }
+
+        .questions-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-card:hover {
+            background-color: var(--card-hover);
+            border-color: #334155;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-number {
+            font-weight: 800;
+            color: var(--react-blue);
+            font-size: 1.05rem;
+            min-width: 2rem;
+        }
+
+        .question-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .answer-box {
+            margin-left: 2.75rem;
+            padding-top: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+
+        code {
+            background-color: rgba(97, 218, 251, 0.1);
+            color: var(--react-blue);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+
+            header h1 {
+                font-size: 1.85rem;
+            }
+
+            .answer-box {
+                margin-left: 0;
+                margin-top: 0.75rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <svg class="react-logo" viewBox="-11.5 -10.23174 23 20.46348" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+                <g stroke="#61dafb" stroke-width="1" fill="none">
+                    <ellipse rx="11" ry="4.2"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                </g>
+            </svg>
+            <h1>React.js Interview Questions</h1>
+            <p>30 Core Questions & Concise Answers Categorized by Experience Level</p>
+        </header>
+
+        <!-- Beginner Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Beginner Level</h2>
+                <span class="badge badge-beginner">Foundational</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">1.</span>
+                        <h3 class="question-title">What is React.js?</h3>
+                    </div>
+                    <div class="answer-box">
+                        A JavaScript library for building user interfaces, developed by Facebook, using reusable components and a Virtual DOM.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">2.</span>
+                        <h3 class="question-title">What are the main features of React?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Includes Virtual DOM, component-based architecture, one-way data binding, JSX, and React Hooks.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">3.</span>
+                        <h3 class="question-title">What is JSX?</h3>
+                    </div>
+                    <div class="answer-box">
+                        JavaScript XML; a syntax extension that allows writing HTML-like code inside JavaScript to describe UI.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">4.</span>
+                        <h3 class="question-title">Difference between functional and class components?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Functional components are simple functions taking props and returning JSX; class components use the render method and can hold state.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">5.</span>
+                        <h3 class="question-title">What are props?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Read-only properties passed to components to make them dynamic.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">6.</span>
+                        <h3 class="question-title">Create a button that changes color on click?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use the <code>useState</code> hook to manage color state and update it via an <code>onClick</code> event.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">7.</span>
+                        <h3 class="question-title">Display a username greeting?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Pass a username prop to a functional component and render it dynamically.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">8.</span>
+                        <h3 class="question-title">Output of provided code?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Explains how <code>useState</code> and <code>setCount</code> update the component state, triggering a re-render.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">9.</span>
+                        <h3 class="question-title">Create a list using map()?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use the <code>.map()</code> method to iterate over an array and generate elements, each with a unique <code>key</code> prop.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">10.</span>
+                        <h3 class="question-title">Conditionally render a component?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use ternary operators or logical AND (<code>&&</code>) operators.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intermediate Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Intermediate Level</h2>
+                <span class="badge badge-intermediate">1–2 Years Exp</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">11.</span>
+                        <h3 class="question-title">State vs. Props?</h3>
+                    </div>
+                    <div class="answer-box">
+                        State is mutable and managed internally; props are immutable and passed from parents.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">12.</span>
+                        <h3 class="question-title">How does Virtual DOM work?</h3>
+                    </div>
+                    <div class="answer-box">
+                        It creates a lightweight copy of the real DOM, calculates differences (diffing), and updates only the necessary parts.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">13.</span>
+                        <h3 class="question-title">React Hooks?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Functions like <code>useState</code> (state management), <code>useEffect</code> (side effects), <code>useContext</code> (global state), and <code>useRef</code> (DOM access).
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">14.</span>
+                        <h3 class="question-title">Context API?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Shares state across components without manual prop drilling.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">15.</span>
+                        <h3 class="question-title">React Router?</h3>
+                    </div>
+                    <div class="answer-box">
+                        A library for handling navigation in React applications.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">16.</span>
+                        <h3 class="question-title">Pass data child to parent?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Pass a callback function from the parent as a prop to the child.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">17.</span>
+                        <h3 class="question-title">Fetch API data?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use <code>useEffect</code> to trigger an API call upon component mounting.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">18.</span>
+                        <h3 class="question-title">Prevent unnecessary re-renders?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use <code>React.memo</code> (functional) or <code>shouldComponentUpdate</code> (class components).
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">19.</span>
+                        <h3 class="question-title">Handle form submission?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use controlled input fields with <code>useState</code> and an <code>onSubmit</code> handler to prevent page refresh.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">20.</span>
+                        <h3 class="question-title">Lazy loading?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Loads components only when needed using <code>React.lazy</code> and <code>Suspense</code>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Advanced / Experienced Level</h2>
+                <span class="badge badge-advanced">Architecture & Performance</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">21.</span>
+                        <h3 class="question-title">What is reconciliation?</h3>
+                    </div>
+                    <div class="answer-box">
+                        The process of updating the DOM by comparing the Virtual DOM with the real DOM.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">22.</span>
+                        <h3 class="question-title">Higher-Order Components (HOCs)?</h3>
+                    </div>
+                    <div class="answer-box">
+                        A pattern where a function takes a component and returns an enhanced component.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">23.</span>
+                        <h3 class="question-title">useCallback vs. useMemo?</h3>
+                    </div>
+                    <div class="answer-box">
+                        <code>useCallback</code> memoizes functions; <code>useMemo</code> memoizes computed values.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">24.</span>
+                        <h3 class="question-title">Server-Side Rendering (SSR)?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Renders components on the server and sends the final HTML to the client.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">25.</span>
+                        <h3 class="question-title">What is React Fiber?</h3>
+                    </div>
+                    <div class="answer-box">
+                        The new reconciliation algorithm designed to improve performance.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">26.</span>
+                        <h3 class="question-title">Optimize slow components?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use <code>memo</code>, <code>useMemo</code>, and minimize unnecessary state updates.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">27.</span>
+                        <h3 class="question-title">Authentication?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use JWT tokens stored in local storage managed via Context Providers.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">28.</span>
+                        <h3 class="question-title">Handle memory leaks?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use <code>useEffect</code> cleanup functions to remove event listeners or clear intervals.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">29.</span>
+                        <h3 class="question-title">Infinite scrolling?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Implement via <code>IntersectionObserver</code> or scroll event listeners.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">30.</span>
+                        <h3 class="question-title">Debug performance issues?</h3>
+                    </div>
+                    <div class="answer-box">
+                        Use React Developer Tools, the Profiler API, and identify unnecessary renders.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
