@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Gen AI Interview Questions</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --beginner-color: #10b981;
+            --intermediate-color: #0284c7;
+            --advanced-color: #8b5cf6;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-beginner {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--beginner-color);
+            border: 1px solid var(--beginner-color);
+        }
+
+        .badge-intermediate {
+            background-color: rgba(2, 132, 199, 0.15);
+            color: var(--intermediate-color);
+            border: 1px solid var(--intermediate-color);
+        }
+
+        .badge-advanced {
+            background-color: rgba(139, 92, 246, 0.15);
+            color: var(--advanced-color);
+            border: 1px solid var(--advanced-color);
+        }
+
+        .questions-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .question-card:hover {
+            transform: translateY(-2px);
+            border-color: #475569;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .question-number {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-right: 0.5rem;
+        }
+
+        .timestamp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .question-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .timestamp {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generative AI Interview Questions</h1>
+            <p>30 Curated Questions Categorized by Experience Level</p>
+        </header>
+
+        <!-- Beginner Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Beginner Level</h2>
+                <span class="badge badge-beginner">Foundational</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">1.</span> What is Gen AI?</div>
+                    <span class="timestamp">1:31</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">2.</span> How is Generative AI different from traditional AI?</div>
+                    <span class="timestamp">2:35</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">3.</span> Can you explain what a large language model (LLM) is?</div>
+                    <span class="timestamp">3:47</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">4.</span> What are some common use cases of Gen AI?</div>
+                    <span class="timestamp">4:42</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">5.</span> If your company wants to automate customer support using Generative AI, how would you approach it?</div>
+                    <span class="timestamp">5:33</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">6.</span> How would you explain Gen AI to a non-technical stakeholder?</div>
+                    <span class="timestamp">6:42</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">7.</span> What are some popular Generative AI tools and frameworks?</div>
+                    <span class="timestamp">7:34</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">8.</span> What role does data play in Gen AI?</div>
+                    <span class="timestamp">8:27</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">9.</span> Suppose your company wants to generate marketing content using Gen AI. How would you ensure it aligns with the brand voice?</div>
+                    <span class="timestamp">9:19</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">10.</span> If your AI model generates biased or offensive content, how would you handle it?</div>
+                    <span class="timestamp">10:17</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intermediate Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Intermediate Level</h2>
+                <span class="badge badge-intermediate">1 Year Experience</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">11.</span> What is prompt engineering in Generative AI?</div>
+                    <span class="timestamp">11:24</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">12.</span> What is fine-tuning, and why is it important?</div>
+                    <span class="timestamp">12:25</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">13.</span> Your company wants to use Gen AI for document summarization. How would you implement it?</div>
+                    <span class="timestamp">13:19</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">14.</span> How would you use Gen AI to improve software development productivity?</div>
+                    <span class="timestamp">14:18</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">15.</span> What is retrieval augmented generation (RAG) and why is it used?</div>
+                    <span class="timestamp">15:09</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">16.</span> Suppose your team wants to build a legal assistant using Gen AI, what steps would you take?</div>
+                    <span class="timestamp">16:05</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">17.</span> What are diffusion models in Gen AI?</div>
+                    <span class="timestamp">17:06</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">18.</span> If you were asked to deploy a Generative AI chatbot for HR, what would you consider?</div>
+                    <span class="timestamp">17:57</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">19.</span> What are hallucinations in Gen AI?</div>
+                    <span class="timestamp">18:54</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">20.</span> How would you integrate Gen AI into a customer-facing mobile app?</div>
+                    <span class="timestamp">19:56</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Level -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Advanced Level</h2>
+                <span class="badge badge-advanced">System Design & Strategy</span>
+            </div>
+            <div class="questions-list">
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">21.</span> What is reinforcement learning with human feedback (RLHF)?</div>
+                    <span class="timestamp">20:50</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">22.</span> Your organization wants to generate synthetic data for model training. How would you approach it?</div>
+                    <span class="timestamp">21:56</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">23.</span> How do you ensure Gen AI systems are ethical and unbiased?</div>
+                    <span class="timestamp">22:56</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">24.</span> How would you design a Gen AI system for multilingual support in customer service?</div>
+                    <span class="timestamp">23:54</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">25.</span> What are some challenges scaling Generative AI applications in enterprises?</div>
+                    <span class="timestamp">24:48</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">26.</span> How would you use Gen AI in fraud detection?</div>
+                    <span class="timestamp">25:45</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">27.</span> What is the role of vector databases in Gen AI?</div>
+                    <span class="timestamp">26:37</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">28.</span> Imagine your company wants to create AI-generated product designs. How would you implement it?</div>
+                    <span class="timestamp">27:35</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">29.</span> What future trends do you see in Gen AI?</div>
+                    <span class="timestamp">28:25</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-text"><span class="question-number">30.</span> How would you measure the success of a Gen AI project in an enterprise?</div>
+                    <span class="timestamp">29:16</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
